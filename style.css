@@ -6,6 +6,16 @@ body {
     height: 100vh;
 }
 
+img{
+    filter: drop-shadow(5px 5px 5px #222); 
+    width:150px; 
+    height:150px; 
+    margin-top: 10%;
+    margin-left: 10%;
+    display: inline-block;
+}
+
+
 ul{
     list-style-type: none;
     margin: 0;
