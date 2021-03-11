@@ -38,7 +38,7 @@ function win(userChoice, computerChoice) {
   else if(userChoice === "scissor"){
   result_div.innerHTML = image(userChoice) + " cuts the " + image(computerChoice) + ". You Win !";
   }
-  computer_choice_div.innerHTML = "Computer chose " + image(computerChoice)+ ".";
+  computer_choice_div.innerHTML = "Computer chose " + image(computerChoice) ;
 }
 
 function lose(userChoice, computerChoice) {
@@ -57,7 +57,7 @@ function lose(userChoice, computerChoice) {
     }
     else if(computerChoice === "scissor"){
     result_div.innerHTML = image(computerChoice) + " cuts the " + image(userChoice) + ". You Lose !";
-    computer_choice_div.innerHTML = "Computer chose " + image(computerChoice) + ".";
+    computer_choice_div.innerHTML = "Computer chose " + image(computerChoice) ;
     }
 }
 
@@ -69,7 +69,7 @@ function draw(userChoice, computerChoice) {
   setTimeout(() => document.getElementById(userChoice).classList.remove('gray_shine'),500)
 
   result_div.innerHTML = image(computerChoice) + " nullifies  " + image(userChoice) + ". Its a Draw !";  
-  computer_choice_div.innerHTML = "Computer chose " + image(computerChoice) + ".";
+  computer_choice_div.innerHTML = "Computer chose " + image(computerChoice);
 }
 
 function game(userChoice) {
