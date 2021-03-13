@@ -44,3 +44,25 @@
     color: #fff;
     transition: ease all 0.5s;
 }
+
+.navbar {
+    
+    height: 50px;
+    width: 100%;
+    background: black;
+    color: white;
+}
+
+.navbar-nav{
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%
+}
+
+a{
+    color: currentColor;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
