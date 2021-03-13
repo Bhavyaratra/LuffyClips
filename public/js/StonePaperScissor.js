@@ -29,6 +29,8 @@ function win(userChoice, computerChoice) {
   document.getElementById(userChoice).classList.add('green_shine');
   setTimeout(() => document.getElementById(userChoice).classList.remove('green_shine'),500)
 
+  computer_choice_div.innerHTML = "Computer chose " + image(computerChoice) ;
+
   if(userChoice === "stone"){
   result_div.innerHTML = image(userChoice) + " breaks the " + image(computerChoice) + ". You Win !";
   }
@@ -38,7 +40,6 @@ function win(userChoice, computerChoice) {
   else if(userChoice === "scissor"){
   result_div.innerHTML = image(userChoice) + " cuts the " + image(computerChoice) + ". You Win !";
   }
-  computer_choice_div.innerHTML = "Computer chose " + image(computerChoice) ;
 }
 
 function lose(userChoice, computerChoice) {
@@ -49,16 +50,17 @@ function lose(userChoice, computerChoice) {
   document.getElementById(userChoice).classList.add('red_shine');
   setTimeout(() => document.getElementById(userChoice).classList.remove('red_shine'),500)
 
+  computer_choice_div.innerHTML = "Computer chose " + image(computerChoice) ;
+
   if(computerChoice === "stone"){
-    result_div.innerHTML = image(computerChoice) + " breaks the " + image(userChoice) + ". You Lose !";
-    }
-    else if(computerChoice === "paper"){
-    result_div.innerHTML = image(computerChoice) + " wraps the " + image(userChoice) + ". You Lose !";
-    }
-    else if(computerChoice === "scissor"){
-    result_div.innerHTML = image(computerChoice) + " cuts the " + image(userChoice) + ". You Lose !";
-    computer_choice_div.innerHTML = "Computer chose " + image(computerChoice) ;
-    }
+  result_div.innerHTML = image(computerChoice) + " breaks the " + image(userChoice) + ". You Lose !";
+  }
+  else if(computerChoice === "paper"){
+  result_div.innerHTML = image(computerChoice) + " wraps the " + image(userChoice) + ". You Lose !";
+  }
+  else if(computerChoice === "scissor"){
+  result_div.innerHTML = image(computerChoice) + " cuts the " + image(userChoice) + ". You Lose !";
+  }
 }
 
 function draw(userChoice, computerChoice) {
@@ -68,8 +70,9 @@ function draw(userChoice, computerChoice) {
   document.getElementById(userChoice).classList.add('gray_shine');
   setTimeout(() => document.getElementById(userChoice).classList.remove('gray_shine'),500)
 
+  computer_choice_div.innerHTML = "Computer chose " + image(computerChoice) ;
+
   result_div.innerHTML = image(computerChoice) + " nullifies  " + image(userChoice) + ". Its a Draw !";  
-  computer_choice_div.innerHTML = "Computer chose " + image(computerChoice);
 }
 
 function game(userChoice) {
