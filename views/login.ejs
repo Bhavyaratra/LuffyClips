@@ -13,23 +13,30 @@
 <body>
 	<div class="navbar">
 		<ul class="navbar-nav">
-			<li class="nav-item"><a href="/">Home</a></li>
-			<li class="nav-item"><a href="about">About</a></li>
-			<li class="nav-item"><a href="login">Login</a></li>
+			<li class="nav-item"><a href="/"  class="nav_a">Home</a></li>
+			<li class="nav-item"><a href="about"  class="nav_a">About</a></li>
+			<li class="nav-item"><a href="login"  class="nav_a">Login</a></li>
 		</ul>
 	</div>
 <div class="login-container">  
-    <h1>login</h1> 
+  
     
     <form action="/login" method="POST"> 
-        <input type="text" name="username"
-            placeholder="username"> 
-        <input type="password" name="password" 
-            placeholder="password"> 
-        <button>login</button> 
+        Username:<br>
+            <input style="margin:5px;" type="text" name="username" placeholder="username"> <br>
+        Password:<br>
+            <input style="margin:5px;" type="password" name="password" placeholder="password"> <br>
+        
+        <button type="submit">Sign In!</button> 
+      
+     
     </form> 
-    s
-    <li><a href="/register">Sign up!!</a></li> 
-    <li><a href="/login">Login</a></li> 
-    <li><a href="/logout">Logout</a></li> 
+
+    <small class="text-muted ml-2">
+        Forgot Password :
+                    </small><br>
+        <small class="text-muted">
+            Need an account? <a class="ml-2" href="register">Sign Up</a>
+        </small>
+  
 </div>  

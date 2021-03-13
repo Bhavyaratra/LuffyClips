@@ -1,43 +1,4 @@
-
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-@font-face {
-    font-family: Poppins-Regular;
-    src: url('../fonts/poppins/Poppins-Regular.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-Medium;
-    src: url('../fonts/poppins/Poppins-Medium.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-Bold;
-    src: url('../fonts/poppins/Poppins-Bold.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-SemiBold;
-    src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
-  }
-  
-  
-  
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ RESTYLE TAG ]*/
-  
-  * {
-      margin: 0px; 
-      padding: 0px; 
-      box-sizing: border-box;
-  }
-  
-  body, html {
+body, html {
         margin: 0;
         padding: 0;
         font-family: 'Montserrat', sans-serif;
@@ -46,23 +7,12 @@
   }
   
   /*---------------------------------------------*/
-  a{
+  .nav_a{
     color: currentColor;
     text-decoration: none;
 }
   /*---------------------------------------------*/
-  h1,h2,h3,h4,h5,h6 {
-      margin: 0px;
-  }
-  
-  p {
-      font-family: Poppins-Regular;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #666666;
-      margin: 0px;
-  }
-  
+
   ul{
     list-style-type: none;
     margin: 0;
@@ -86,43 +36,21 @@
   
   /*---------------------------------------------*/
   input {
-      outline: none;
-      border: none;
+      outline:#333333; 
   }
+
   
-  textarea {
-    outline: none;
-    border: none;
-  }
-  
-  textarea:focus, input:focus {
-    border-color: transparent !important;
-  }
-  
-  input:focus::-webkit-input-placeholder { color:transparent; }
-  input:focus:-moz-placeholder { color:transparent; }
-  input:focus::-moz-placeholder { color:transparent; }
-  input:focus:-ms-input-placeholder { color:transparent; }
-  
-  textarea:focus::-webkit-input-placeholder { color:transparent; }
-  textarea:focus:-moz-placeholder { color:transparent; }
-  textarea:focus::-moz-placeholder { color:transparent; }
-  textarea:focus:-ms-input-placeholder { color:transparent; }
-  
+   
   input::-webkit-input-placeholder { color: #adadad;}
   input:-moz-placeholder { color: #adadad;}
   input::-moz-placeholder { color: #adadad;}
   input:-ms-input-placeholder { color: #adadad;}
-  
-  textarea::-webkit-input-placeholder { color: #adadad;}
-  textarea:-moz-placeholder { color: #adadad;}
-  textarea::-moz-placeholder { color: #adadad;}
-  textarea:-ms-input-placeholder { color: #adadad;}
+
   
   /*---------------------------------------------*/
   button {
-      outline: none !important;
-      border: none;
+      margin-top: 20px;
+      margin-bottom: 10px;
       background: linear-gradient(236deg, #e403a0, #5f03d6);
     
   }
