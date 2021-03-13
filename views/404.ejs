@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThemeChanger</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+
+</head>
+<body class="light">
+
+    <nav class="navbar">
+        <ul class="navbar-nav">
+           <a href='/'><li class="nav-item">Home</li></a> 
+            <a href='/calc'><li class="nav-item">Calculator</li></a>
+            <a href='/about'><li class="nav-item">About</li></a>
+            <!--Dropdown menu-->
+            <li class="nav-item has-dropdown">
+                <a href="/theme">Theme</a>
+                <ul class="dropdown">
+                    <li class="dropdown-item">
+                        <a id="light" href="#">Light</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a id="dark" href="#">Dark</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a id="solarize" href="#">Solarize</a>
+                    </li>
+                </ul>
+            </li>
+            
+                
+            <li class="nav-item">Login</li>    
+        </ul>   
+    </nav> 
+    <div class ="notfound">
+        <h2>404 Error</h2>
+        <p>
+            Prters.
+          </p>
+    </div> 
+  </body>
+</html>
