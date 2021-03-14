@@ -141,4 +141,23 @@
     justify-content: space-evenly;
     height: 100%
   }
+img{
+  width: 200px;
+  
+}
+.small_screen{
+  height: 20px;
+  font-size: 30px;
+}
+  @media screen and (max-width: 700px) {
+    img{
+    height: 100px;
+    width: 100px;
+       /* margin-right: 25%; */
+}
+.small_screen{
+  height: 20px;
+  font-size: 20px;
+}
 
+  }

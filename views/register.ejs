@@ -18,24 +18,25 @@
 			<li class="nav-item"><a href="login"  class="nav_a">Login</a></li>
 		</ul>
 	</div>
-<div class="login-container" style="margin: 5px;">  
+<div class="login-container" style="margin: 10px; ">  
   <h1 style="color: rgb(81, 30, 199);font-family:'Times New Roman', Times, serif">Register Here : </h1>
     
     <form action="/register" method="POST"> 
-        First Name:<p1 style="color: rgb(255, 0, 0);">*</p1><br>
-            <input style="margin:5px;" type="text" name="first " placeholder="first name" required="true"> <br>
+
+        <p class="form-detail">First Name:<span style="color: rgb(255, 0, 0);">*</span></p>
+            <input  type="text" name="first " placeholder="first name" required="true"> <br>
             <br>
-        Last Name:<br>
-            <input style="margin:5px;" type="text" name="last" placeholder="last name"> <br>
+        <p class="form-detail">Last Name:</p>
+            <input  type="text" name="last" placeholder="last name">
             <br>
-        Email:<p1 style="color: rgb(255, 0, 0);">*</p1><br>
-            <input style="margin:5px;" type="email" name="email" placeholder="email" required="true"> <br>
+        <p class="form-detail"> Email:<span style="color: rgb(255, 0, 0);">*</span></p>
+            <input  type="email" name="email" placeholder="email" required="true"> <br>
             <br>
-        Password:<p1 style="color: rgb(255, 0, 0);">*</p1><br>
-            <input style="margin:5px;" type="password" name="password" placeholder="password" required="true"> <br>
+        <p class="form-detail">Password:<span style="color: rgb(255, 0, 0);">*</span></p>
+            <input  type="password" name="password" placeholder="password" required="true"> <br>
             <br>
-        Confirm Password:<p1 style="color: rgb(255, 0, 0);">*</p1><br>
-            <input style="margin:5px;" type="password" name="password" placeholder="confirm password" required="true"> <br>
+        <p class="form-detail">Confirm Password:<span style="color: rgb(255, 0, 0);">*</span></p>
+            <input  type="password" name="password" placeholder="confirm password" required="true"> <br>
             <br>
         <button type="submit" >Sign Up!</button> 
       
