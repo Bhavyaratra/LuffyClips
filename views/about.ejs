@@ -13,13 +13,7 @@
     <link rel="stylesheet" href="css/about.css">
 </head>    
 <body>
-<div class="navbar">
-    <ul class="navbar-nav">
-        <li class="nav-item"><a href="/">Home</a></li>
-        <li class="nav-item"><a href="/about">About</a></li>
-        <li class="nav-item"><a href="/login">Login</a></li>
-    </ul>
-</div>
+<%- include('./partials/nav1.ejs')%>
 <div style="margin: 10%;margin-top:5%;">
 
 <h2 style="text-align: center; color:aqua">About us</h2>
@@ -28,5 +22,8 @@
     <h1 style="color: yellowgreen;">Mobile games:</h1>
    <p style="color:rgb(109, 204, 31)"> Luffyclip has many online games that are available for every Browser such as Tic-Tac-Toe , Memory Game,Stone Paper Scissor and many more. </p>
 </div>
+
+<%- include('./partials/footer.ejs') %>
+
 </body>
 </html>
