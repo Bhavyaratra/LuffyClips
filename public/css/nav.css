@@ -33,9 +33,14 @@
     align-items:center;
     /* padding:1px 1% */
 }
+.cropped {
+    width: 120px; 
+    height: 50px; 
+}
 
 .img_logo{
     cursor: pointer;
+
 }
 .nav_links{
     list-style: none;
@@ -63,5 +68,7 @@
 }
 
 .nav_button:hover{
-    background-color:rgba(0,136,169,0.8);
+    background-color:blue;
+    color: #edf0f1;
+    
 }
