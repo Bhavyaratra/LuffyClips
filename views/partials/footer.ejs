@@ -1,3 +1,102 @@
+
+  <style>
+    footer {
+      /*text-align: center;*/
+      
+      background-color:black;
+      color: white;
+      display: block;
+
+
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+
+
+    }
+    .github
+    {
+        color:darkorange;
+    }
+    .linkedin{
+        color: aqua;
+    }
+    a{
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-style: italic;
+        font-weight: 300;
+    }
+    a:hover{
+
+        color: blue;
+    }
+    .manage{
+        justify-content: space-evenly;
+        align-items: center;
+        display: flex;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .github{
+margin-left: 20%;
+margin-right: 20%;
+float: none;
+
+        }
+        .linkedin{
+            margin-left: 20%;
+            margin-right: 20%;
+            float: none;
+                    }
+             
+                    
+    .copyright{
+        margin-left: 20%;
+            margin-right: 20%;
+            float: none;
+            
+    }
+    .manage{
+        justify-content:center;
+        align-items:center;
+        display:contents;
+    }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .github,.copyright,.linkedin{margin-left: 10%;        }
+          
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    
+
 <footer>
-    Copyright &copy; LuffyClips 2021
+   
+    <div class="manage">
+                <div class="github">
+                 <!-- Github Links: -->
+                 <i class="fab fa-github"></i>
+                 <a href="https://github.com/amanchauhan112">Aman</a> &emsp;
+      
+             <a href="https://github.com/Bhavyaratra">Bhavyaratra</a>        
+             &emsp;
+             <a href="https://github.com/luffyguy">luffyguy</a>
+        </div>
+    
+        <div  class="copyright">     &emsp; Copyright &copy; LuffyClips 2021</div>
+         
+             <div  class="linkedin">
+                 <!-- LinkedIn Links: -->
+                 <i class="fab fa-linkedin"></i>
+
+                 <a href="https://www.linkedin.com/in/aman-chauhan-2b51471b6/">Aman</a>   
+                 &emsp;
+            
+             <a href="https://www.linkedin.com/in/harsh-tanwar-22761017b/">luffyguy</a> 
+             &emsp;
+             <a href="https://www.linkedin.com/in/bhavya-ratra-b816101a9/">Bhavyaratra</a>
+         </div>
+        </div>
 </footer>
