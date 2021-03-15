@@ -6,8 +6,14 @@
 <div class="fixed text-white text-sm ml-2 mt-1 select-none">
   <span>Score:</span><span id="scoreEl">0</span>
 </div>
+<link rel="stylesheet" href="css/nav.css"/>
+
+<%- include('./partials/nav1.ejs')%>
+
 
 <div class="fixed inset-0 flex items-center justify-center" id="modalEl">
+  
+  
   <div class="bg-white max-w-md w-full p-6 text-center">
     <h1 class="text-4xl font-bold" id="bigScoreEl">0</h1>
     <p class="text-sm text-gray-700 mb-4">Points</p>
@@ -16,8 +22,8 @@
     </div>
   </div>
 </div>
-
 <canvas></canvas>
+<%- include('./partials/footer.ejs') %>
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
