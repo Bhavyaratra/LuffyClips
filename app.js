@@ -43,6 +43,11 @@ app.get('/MemoryGame',(req,res) =>{
     res.render('MemoryGame')
 })
 
+app.get('/Shooter',(req,res) =>{
+    res.render('Shooter')
+})
+
+
 
 app.use((req,res)=>{
     res.render('404')
