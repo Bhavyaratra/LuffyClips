@@ -4,6 +4,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-image: linear-gradient(236deg, #E41B17, #F88017);
     height: 100vh;
+    background-image: linear-gradient(236deg, blue,purple);
+
 }
 
 img{

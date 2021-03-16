@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link
+	<!-- <link
       href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
       rel="stylesheet"
-    />
+    /> -->
     <link rel="stylesheet" href="css/login.css">
 
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+
+
 
 </head>
 <body>
+<a href="/" class="sidebar_a"><i class="fa fa-home" style="font-size: 50px;color:aqua;"></i></a>
+
 <%- include('./partials/nav1.ejs') %>
+
 <div style="margin: 10px;">  
   
     
@@ -36,7 +45,7 @@
             Need an account? <a class="ml-2" href="register">Sign Up</a>
         </small>
 
+        <%- include('./partials/footer.ejs') %>
   
 </div>  
 
-<%- include('./partials/footer.ejs') %>
