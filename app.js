@@ -4,6 +4,10 @@ const express = require('express');
 //express app
 const app= express();
 
+var txt= 'host'
+var url='http://localhost:3000/'
+console.log(txt.link(url))
+
 //express view engine
 app.set('view engine', 'ejs')
 
