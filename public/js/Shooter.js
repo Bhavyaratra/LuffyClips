@@ -233,7 +233,7 @@ function animate() {
 
 addEventListener("click", (event) => {
   const angle = Math.atan2(
-    event.clientY - (canvas.height + 55) / 2 ,
+    event.clientY - (canvas.height + 100) / 2 ,
     event.clientX - canvas.width / 2
   );
   const velocity = {
