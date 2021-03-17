@@ -134,8 +134,8 @@ function spawnEnemies() {
 
     const angle = Math.atan2(canvas.height / 2 - y, canvas.width / 2 - x);
     const velocity = {
-      x: Math.cos(angle) * 0.5,
-      y: Math.sin(angle) * 0.5,
+      x: Math.cos(angle) * 0.8,
+      y: Math.sin(angle) * 0.8,
     };
 
     enemies.push(new Enemy(x, y, radius, color, velocity));
@@ -248,6 +248,6 @@ addEventListener("click", (event) => {
 startGameBtn.addEventListener("click", () => {
   init();
   animate();
-  // spawnEnemies();
+  spawnEnemies();
   modalEl.style.display = "none";
 });
