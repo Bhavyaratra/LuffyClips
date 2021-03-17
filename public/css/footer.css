@@ -37,20 +37,20 @@ footer {
   }
 
   @media only screen and (max-width: 800px) {
-      .github{
+      .github_div{
 margin-left: 20%;
 margin-right: 20%;
 float: none;
 
       }
-      .linkedin{
+      .linkedin_div{
           margin-left: 20%;
           margin-right: 20%;
           float: none;
                   }
            
                   
-  .copyright{
+  .copyright_div{
       margin-left: 20%;
           margin-right: 20%;
           float: none;
@@ -64,19 +64,19 @@ float: none;
   }
 
   @media only screen and (max-width: 670px) {
-      .github,.copyright,.linkedin{
+      .github_div,.copyright_div,.linkedin_div{
         margin-right:10%;
       float: right;    }
         
   }
   @media only screen and (max-width: 550px) {
-    .github,.copyright,.linkedin{
+    .github_div,.copyright_div,.linkedin_div{
       margin-right:5%;
     float: right;    }
       
 }
 @media only screen and (max-width:500px) {
-    .github,.copyright,.linkedin{
+    .github_div,.copyright_div,.linkedin_div{
       margin-right:0px;
     float: right;  
 justify-content:unset}

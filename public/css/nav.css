@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     background-color:#24252A;
-
+z-index: 50;
 }
 .nav_li,.nav_a,.nav_button{
     font-family:"Montserrat",sans-serif;

@@ -6,19 +6,27 @@
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link
+	<link
       href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
       rel="stylesheet"
-    /> -->
+    />
     <link rel="stylesheet" href="css/login.css">
-
-    <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/footer.css">
 
-
-
+<style>
+    .github
+    {
+        color:darkorange;
+    }
+    .linkedin{
+        color: aqua;
+    }
+</style>
 </head>
+
+
 <body>
 <a href="/" class="sidebar_a"><i class="fa fa-home" style="font-size: 50px;color:aqua;"></i></a>
 
@@ -42,10 +50,11 @@
         Forgot Password :
                     </small><br>
         <small class="text-muted form-detail">
-            Need an account? <a class="ml-2" href="register">Sign Up</a>
+            Need an account? <a class="ml-2" href="register" style="color:rgb(240, 73, 44);">Sign Up</a>
         </small>
 
-        <%- include('./partials/footer.ejs') %>
+        
   
 </div>  
 
+<%- include('./partials/footer.ejs') %>

@@ -42,13 +42,14 @@ body {font-family: "Lato", sans-serif;}
 display: none;
 }
 
-@media screen and (min-width: 665px)
+@media screen and (min-width: 664px)
 {
   .sidebar_a{
    display: none;
   }
 }
-@media screen and (max-width: 665px) {
+
+@media screen and (max-width: 664px) {
   .sidebar{
     display: block;
   }
