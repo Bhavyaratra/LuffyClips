@@ -1,0 +1,28 @@
+h2{
+    text-align: center;
+    color:yellow;
+}
+
+#user-box {
+
+    position: relative;
+    padding: 2px;
+    margin: 5% auto;
+    width: 400px;
+    height: 500px;
+    background: rgb(26, 26, 26);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   opacity:95%
+  }
+
+.name{
+    
+    color: crimson;
+    font-size: 26px;
+}  
+
+.email{
+    
+    color: rgb(0, 255, 106);
+}
