@@ -10,43 +10,42 @@
       href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/background.css">
+    <!-- <link rel="stylesheet" href="css/background.css"> -->
 
 
-</head>
+  </head>
+
 <body>
+
 <a href="/" class="sidebar_a"><i class="fa fa-home" style="font-size: 50px;color:aqua;"></i></a>
 
 	<%- include('./partials/nav1.ejs') %>
-	</div>
-<div class="login-container" style="margin: 10px; ">  
-  <h1 style="color:violet;font-family:'Times New Roman', Times, serif">Register Here : </h1>
-    
-    <form action="/register" method="POST"> 
 
-        <p class="form-detail">First Name:<span style="color: rgb(255, 0, 0);">*</span></p>
-            <input  type="text" name="first " placeholder="first name" required="true"> <br>
-            <br>
-        <p class="form-detail">Last Name:</p>
-            <input  type="text" name="last" placeholder="last name">
-            <br>
-        <p class="form-detail"> Email:<span style="color: rgb(255, 0, 0);">*</span></p>
-            <input  type="email" name="email" placeholder="email" required="true"> <br>
-            <br>
-        <p class="form-detail">Password:<span style="color: rgb(255, 0, 0);">*</span></p>
-            <input  type="password" name="password" placeholder="password" required="true"> <br>
-            <br>
-        <p class="form-detail">Confirm Password:<span style="color: rgb(255, 0, 0);">*</span></p>
-            <input  type="password" name="password" placeholder="confirm password" required="true"> <br>
-            <br>
-        <button type="submit" >Sign Up!</button> 
+  <div id="login-box">
+    <div class="left">
+      <h1>Sign up</h1>
       
-     
-    </form> 
-
-  Already have an account: <a href="login">Sign in.</a> 
-</div>  
-
+      <input type="text" name="username" placeholder="Username" required/>
+      <input type="email" name="email" placeholder="E-mail" required/>
+      <input type="password" name="password" placeholder="Password" required/>
+      <input type="password" name="password2" placeholder="Retype password" />
+      
+      <input type="submit" name="signup_submit" value="Sign me up" />
+    </div>
+    
+    <div class="right">
+      <span class="loginwith">Sign in with<br />social network</span>
+      
+      <button class="social-signin facebook">Log in with facebook</button>
+      <button class="social-signin twitter">Log in with Twitter</button>
+      <button class="social-signin google">Log in with Google+</button>
+    </div>
+    <div class="or">OR</div>
+  </div>
+</body>
 <%- include('./partials/footer.ejs') %>
+</html>
+
+
