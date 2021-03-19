@@ -27,6 +27,10 @@ app.use('/img', express.static(__dirname + 'public/img'))
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/',(req,res)=>{
+    res.render('login');
+})
+
+app.get('/home',(req,res)=>{
     res.render('home');
 })
 
@@ -50,7 +54,7 @@ app.get('/players',(req,res)=>{
     players.find().sort({createdAt: 1})
     .then((result)=>{
         res.render('players',{ players: result})
-        console.log(result);
+        // console.log(result);
     })
     .catch((err)=>{
       console.log(err);
@@ -81,7 +85,7 @@ app.post('/register',async (req,res)=>{
                 res.send('password does not match');
             }
 
-        console.log(req.body);
+        // console.log(req.body);
         
     } catch(error) {
         res.status(400).send(err);
@@ -98,7 +102,7 @@ app.post("/login", async(req,res) => {
         .then((result)=>{
             if(result.password === password)
             {
-                res.status(201).render('/');
+                res.status(201).render('home');
             }else{
                 res.send("wrong pswrd")
             }
