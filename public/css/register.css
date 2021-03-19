@@ -23,7 +23,7 @@ body {
   margin: 5% auto;
   width: 600px;
   height: 400px;
-  background: #FFF;
+  background-color: #1D1F20; 
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -42,6 +42,7 @@ h1 {
   margin: 0 0 20px 0;
   font-weight: 300;
   font-size: 28px;
+  color:#FFF
 }
 
 input[type="text"],
@@ -118,7 +119,7 @@ input[type="submit"]:active {
   padding: 40px;
   width: 300px;
   height: 400px;
-  color: #222;
+  color:#FFF;
   background: url('https://goo.gl/YbktSj');
   background-size: cover;
   background-position: center;
@@ -129,7 +130,7 @@ input[type="submit"]:active {
   display: block;
   margin-bottom: 40px;
   font-size: 28px;
-  color: #222;
+  color: #fff;
   text-align: center;
 }
 
