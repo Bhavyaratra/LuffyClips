@@ -1,11 +1,14 @@
 const fs = require('fs')
 const express = require('express');
+require("./db/conn");
+
+const port= process.env.PORT || 3000;
 
 //express app
 const app= express();
 
 var txt= 'host'
-var url='http://localhost:3000/'
+var url=`http://localhost:${port}/`
 console.log(txt.link(url))
 
 //express view engine
@@ -56,3 +59,4 @@ app.get('/Shooter',(req,res) =>{
 app.use((req,res)=>{
     res.render('404')
 })
+
