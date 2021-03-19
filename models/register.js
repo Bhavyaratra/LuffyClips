@@ -17,5 +17,5 @@ const playerSchema = new Schema({
     }
 },{timestamps: true});
 
-const Register = new mongoose.model('Registration', playerSchema);
-module.exports = Register;
+const users = new mongoose.model('Registration', playerSchema);
+module.exports = users;

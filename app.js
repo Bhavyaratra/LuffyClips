@@ -1,6 +1,7 @@
 const fs = require('fs')
 const express = require('express');
 require("./db/conn");
+const players = require('./models/register');
 
 const port= process.env.PORT || 3000;
 
@@ -15,12 +16,13 @@ console.log(txt.link(url))
 app.set('view engine', 'ejs')
 
 //listen for requests
-app.listen(3000);
+app.listen(port);
 
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 app.use('/img', express.static(__dirname + 'public/img'))
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/',(req,res)=>{
     res.render('home');
@@ -42,6 +44,51 @@ app.get('/register',(req,res)=>{
     res.render('register');
 })
 
+app.get('/players',(req,res)=>{
+    players.find().sort({createdAt: 1})
+    .then((result)=>{
+        res.render('players',{ players: result})
+        console.log(result);
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  })
+
+
+//post request
+app.post('/register',async (req,res)=>{
+    try{
+
+        const password = req.body.password;
+        const password2 = req.body.password2;
+            if(password===password2){
+                const player = new players(req.body);
+                player.save()
+                 .then(result=>{
+                    
+                     res.redirect('/');
+                    
+                 })
+                 .catch(err=>{
+                    res.redirect('/register');
+                     console.log(err);
+                 })
+
+
+            }else{
+                res.send('password does not match');
+            }
+
+        console.log(req.body);
+        
+    } catch(error) {
+        res.status(400).send(err);
+        }
+})
+
+
+
 app.get('/StonePaperScissor',(req,res) =>{
     res.render('StonePaperScissor')
 })
@@ -54,6 +101,9 @@ app.get('/Shooter',(req,res) =>{
     res.render('Shooter')
 })
 
+app.get('/players',(req,res) =>{
+    res.render('players')
+})
 
 
 app.use((req,res)=>{
