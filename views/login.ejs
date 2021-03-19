@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html>
 
-	<title>Login</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link
-      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="description" content="Login - Register Template">
+    <meta name="author" content="Lorenzo Angelino aka MrLolok">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/background.css">
+    <!-- <link rel="stylesheet" href="css/background.css"> -->
     <link rel="stylesheet" href="css/footer.css">
 
 <style>
@@ -23,6 +22,9 @@
     .linkedin{
         color: aqua;
     }
+    body {
+            background-color: #303641;
+        }
 </style>
 </head>
 
@@ -32,29 +34,49 @@
 
 <%- include('./partials/nav1.ejs') %>
 
-<div style="margin: 10px;">  
-  
-    
-    <form action="/login" method="POST"> 
-       <p class="form-detail"> Username:</p>
-            <input  type="text" name="username" placeholder="username" required="true"> 
-        <p class="form-detail">Password:</p>
-            <input  type="password" name="password" placeholder="password" required="true"> <br>
-        
-        <button type="submit">Sign In!</button> 
-      
-     
-    </form> 
 
-    <small class="text-muted ml-2 form-detail">
-        Forgot Password :
-                    </small><br>
-        <small class="text-muted form-detail">
-            Need an account? <a class="ml-2" href="register" style="color:rgb(240, 73, 44);">Sign Up</a>
-        </small>
 
-        
-  
-</div>  
+<div id="container-login">
+    <div id="title">
+        <i class="material-icons lock">lock</i> Login
+    </div>
+
+    <form>
+        <div class="input">
+            <div class="input-addon">
+                <i class="material-icons">face</i>
+            </div>
+            <input id="username" placeholder="Username" type="text" required class="validate" autocomplete="off">
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="input">
+            <div class="input-addon">
+                <i class="material-icons">vpn_key</i>
+            </div>
+            <input id="password" placeholder="Password" type="password" required class="validate" autocomplete="off">
+        </div>
+
+        <div class="remember-me">
+            <input type="checkbox">
+            <span style="color: #DDD">Remember Me</span>
+        </div>
+
+        <input type="submit" value="Log In" />
+    </form>
+
+    <div class="forgot-password">
+        <a href="#">Forgot your password?</a>
+    </div>
+    <div class="privacy">
+        <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="register">
+        Don't have an account yet?
+        <a href="/register"><button id="register-link">Register here</button></a>
+    </div>
+</div>
 
 <%- include('./partials/footer.ejs') %>
