@@ -3,6 +3,8 @@
     /* box-sizing: border-box; */
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
+    color: #F2F2F2;
     background-color:#24252A;
 z-index: 50;
 }
@@ -60,6 +62,15 @@ z-index: 50;
 
 .nav_button:hover{
     background-color:rgb(35, 138, 255);
+    color: #edf0f1;
+    
+}
+
+.logout{
+    background-color: crimson;
+}
+.logout:hover{
+    background-color:rgb(211, 4, 45);
     color: #edf0f1;
     
 }

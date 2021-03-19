@@ -1,6 +1,8 @@
 const fs = require('fs')
 const express = require('express');
 require("./db/conn");
+
+
 const players = require('./models/register');
 
 const port= process.env.PORT || 3000;
@@ -59,7 +61,6 @@ app.get('/players',(req,res)=>{
 //post request
 app.post('/register',async (req,res)=>{
     try{
-
         const password = req.body.password;
         const password2 = req.body.password2;
             if(password===password2){
@@ -82,6 +83,34 @@ app.post('/register',async (req,res)=>{
 
         console.log(req.body);
         
+    } catch(error) {
+        res.status(400).send(err);
+        }
+})
+
+app.post("/login", async(req,res) => {
+    try{
+
+        const email= req.body.email;
+        const password = req.body.password;
+            // {email}
+        players.findOne({email:email})
+        .then((result)=>{
+            if(result.password === password)
+            {
+                res.status(201).render('/');
+            }else{
+                res.send("wrong pswrd")
+            }
+
+        }).catch(err=>{
+            console.log(err);
+            res.status(400).send("Invalid Email")
+        })
+         
+
+        // console.log(`${email} and ${password}`)
+
     } catch(error) {
         res.status(400).send(err);
         }
