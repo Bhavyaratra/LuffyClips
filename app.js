@@ -34,7 +34,7 @@ app.use('/img', express.static(__dirname + 'public/img'))
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/',(req,res)=>{
-    res.render('login');
+    res.render('home');
 })
 
 app.get('/home',(req,res)=>{
