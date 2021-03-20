@@ -11,7 +11,8 @@ body {
   color: #222;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  background-image: url("../img/home/bg.png");
+  background: #373E4A;
+  background:#2a2d2e;
  
   width:100%;
   height: 100vh;
