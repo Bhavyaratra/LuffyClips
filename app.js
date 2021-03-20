@@ -147,10 +147,13 @@ app.get('/Shooter',(req,res) =>{
     res.render('Shooter')
 })
 
+app.get('/TicTacToe',(req,res) =>{
+    res.render('TicTacToe')
+})
+
 app.get('/players',(req,res) =>{
     res.render('players')
 })
-
 
 app.use((req,res)=>{
     res.render('404')
