@@ -30,7 +30,7 @@ const playerSchema = new Schema({
 playerSchema.methods.generateAuthToken = async function(){
     try{
                                         //user id           //secret key
-        const token =  jwt.sign({_id:this._id.toString()}, process.env.SECRET_KEY)//change secret key with min 32 letters
+        const token =  jwt.sign({_id:this._id.toString()}, process.env.SECRET_KEY, {expiresIn: '120s'})//change secret key with min 32 letters
         this.tokens= this.tokens.concat({token:token})
         await this.save();
         

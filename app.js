@@ -3,11 +3,14 @@ const fs = require('fs');
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+const auth = require('./middleware/auth');
 
 require("./db/conn");
 
 
 const players = require('./models/register');
+
 
 const port= process.env.PORT || 3000;
 
@@ -17,6 +20,9 @@ const app= express();
 var txt= 'host'
 var url=`http://localhost:${port}/`
 console.log(txt.link(url))
+
+//cookie-parser middleware
+app.use(cookieParser());
 
 //express view engine
 app.set('view engine', 'ejs')
@@ -41,7 +47,7 @@ app.get('/home',(req,res)=>{
     res.render('home');
 })
 
-app.get('/games',(req,res)=>{
+app.get('/games', auth,(req,res)=>{
     res.render('games');
 })
 
@@ -62,7 +68,7 @@ app.get('/register',(req,res)=>{
 })
 
 // Display all player 
-app.get('/players',(req,res)=>{
+app.get('/players',auth,(req,res)=>{
     players.find().sort({createdAt: 1})
     .then((result)=>{
         res.render('players',{ players: result})
@@ -83,6 +89,13 @@ app.post('/register',async (req,res)=>{
                 const player = new players(req.body); 
                 
                 const token = await player.generateAuthToken();
+                
+                //cookies
+                res.cookie("jwt", token,{
+                    expires: new Date(Date.now() + 60000),
+                    httpOnly:true
+                });
+
                 player.save()
                  .then(result=>{
                      res.redirect('/login');
@@ -116,6 +129,14 @@ app.post("/login", async(req,res) => {
                             //comparing password with crypted pswrd in db
             const isMatch=await bcrypt.compare(password, result.password )
             const token = await result.generateAuthToken();
+
+            //cookies
+            res.cookie("jwt", token,{
+                expires: new Date(Date.now() + 60000),
+                httpOnly:true
+            });
+
+           
             if(isMatch)
             {
                 res.status(201).render('home');
@@ -139,23 +160,23 @@ app.post("/login", async(req,res) => {
 
 //Games
 
-app.get('/StonePaperScissor',(req,res) =>{
+app.get('/StonePaperScissor',auth,(req,res) =>{
     res.render('StonePaperScissor')
 })
 
-app.get('/MemoryGame',(req,res) =>{
+app.get('/MemoryGame',auth,(req,res) =>{
     res.render('MemoryGame')
 })
 
-app.get('/Shooter',(req,res) =>{
+app.get('/Shooter',auth,(req,res) =>{
     res.render('Shooter')
 })
 
-app.get('/TicTacToe',(req,res) =>{
+app.get('/TicTacToe',auth,(req,res) =>{
     res.render('TicTacToe')
 })
 
-app.get('/players',(req,res) =>{
+app.get('/players',auth,(req,res) =>{
     res.render('players')
 })
 
