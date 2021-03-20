@@ -1,5 +1,6 @@
-const fs = require('fs')
+const fs = require('fs');
 const express = require('express');
+const bcrypt = require('bcryptjs');
 require("./db/conn");
 
 
@@ -20,10 +21,13 @@ app.set('view engine', 'ejs')
 //listen for requests
 app.listen(port);
 
+// static files directory
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 app.use('/img', express.static(__dirname + 'public/img'))
+
+//getting players model as a json object 
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/',(req,res)=>{
@@ -50,6 +54,7 @@ app.get('/register',(req,res)=>{
     res.render('register');
 })
 
+// Display all player 
 app.get('/players',(req,res)=>{
     players.find().sort({createdAt: 1})
     .then((result)=>{
@@ -62,7 +67,7 @@ app.get('/players',(req,res)=>{
   })
 
 
-//post request
+//Saving registration data to database 
 app.post('/register',async (req,res)=>{
     try{
         const password = req.body.password;
@@ -92,6 +97,7 @@ app.post('/register',async (req,res)=>{
         }
 })
 
+//pseudo login authentication
 app.post("/login", async(req,res) => {
     try{
 
@@ -121,6 +127,7 @@ app.post("/login", async(req,res) => {
 })
 
 
+//Games
 
 app.get('/StonePaperScissor',(req,res) =>{
     res.render('StonePaperScissor')
