@@ -89,7 +89,7 @@ app.post('/register',async (req,res)=>{
                  })
                  .catch(err=>{
                     res.redirect('/register');
-                     console.log(err);
+                     console.log("registration error");
                  })
 
 
@@ -151,10 +151,13 @@ app.get('/Shooter',(req,res) =>{
     res.render('Shooter')
 })
 
+app.get('/TicTacToe',(req,res) =>{
+    res.render('TicTacToe')
+})
+
 app.get('/players',(req,res) =>{
     res.render('players')
 })
-
 
 app.use((req,res)=>{
     res.render('404')
