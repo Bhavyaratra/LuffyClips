@@ -41,6 +41,10 @@ app.get('/home',(req,res)=>{
     res.render('home');
 })
 
+app.get('/games',(req,res)=>{
+    res.render('games');
+})
+
 app.get('/about',(req,res)=>{
     res.render('about');
 })
