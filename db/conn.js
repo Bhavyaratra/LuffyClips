@@ -1,8 +1,8 @@
+// require('dotenv').config();
 const e = require("express");
 const mongoose = require ("mongoose");
 
-const dbURI = "mongodb+srv://hellhole:test1234@luffyclips.wmafh.mongodb.net/luffyclip?retryWrites=true&w=majority";
-mongoose.connect(dbURI,{
+mongoose.connect(process.env.dbURI,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true

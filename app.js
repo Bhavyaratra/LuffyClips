@@ -1,6 +1,9 @@
+require('dotenv').config();
 const fs = require('fs');
 const express = require('express');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
 require("./db/conn");
 
 
@@ -73,12 +76,12 @@ app.post('/register',async (req,res)=>{
         const password = req.body.password;
         const password2 = req.body.password2;
             if(password===password2){
-                const player = new players(req.body);  
+                const player = new players(req.body); 
+                
+                const token = await player.generateAuthToken();
                 player.save()
                  .then(result=>{
-                    
-                     res.redirect('/');
-                    
+                     res.redirect('/login');
                  })
                  .catch(err=>{
                     res.redirect('/register');
@@ -105,8 +108,11 @@ app.post("/login", async(req,res) => {
         const password = req.body.password;
             // {email}
         players.findOne({email:email})
-        .then((result)=>{
-            if(result.password === password)
+        .then(async (result)=>{
+                            //comparing password with crypted pswrd in db
+            const isMatch=await bcrypt.compare(password, result.password )
+            const token = await result.generateAuthToken();
+            if(isMatch)
             {
                 res.status(201).render('home');
             }else{
