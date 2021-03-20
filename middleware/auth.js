@@ -9,7 +9,8 @@ const auth = async (req,res, next) =>{
         // console.log(verifyUser);
         const player = await players.findOne({_id:verifyUser._id})
          
-
+        req.token = token;
+        req.player = player
 
         next();
         

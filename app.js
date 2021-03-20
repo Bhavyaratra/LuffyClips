@@ -59,8 +59,19 @@ app.get('/login',(req,res)=>{
     res.render('login');
 })
 
-app.get('/logout',(req,res)=>{
-    res.render('logout');
+app.get('/logout',auth, async(req,res)=>{
+    try{
+        req.player.tokens = req.player.tokens.filter((currentPlayer)=>{
+            return currentPlayer.token !== req.token;
+        })
+
+        res.clearCookie("jwt");  //clears cookie
+        await req.player.save(); //
+
+        res.render('logout');
+    }catch{
+        res.status(401).send("Login First")
+    } 
 })
 
 app.get('/register',(req,res)=>{
@@ -92,7 +103,6 @@ app.post('/register',async (req,res)=>{
                 
                 //cookies
                 res.cookie("jwt", token,{
-                    expires: new Date(Date.now() + 60000),
                     httpOnly:true
                 });
 
@@ -117,7 +127,7 @@ app.post('/register',async (req,res)=>{
         }
 })
 
-//pseudo login authentication
+//login authentication
 app.post("/login", async(req,res) => {
     try{
 
@@ -132,7 +142,6 @@ app.post("/login", async(req,res) => {
 
             //cookies
             res.cookie("jwt", token,{
-                expires: new Date(Date.now() + 60000),
                 httpOnly:true
             });
 
