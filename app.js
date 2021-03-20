@@ -73,7 +73,7 @@ app.post('/register',async (req,res)=>{
         const password = req.body.password;
         const password2 = req.body.password2;
             if(password===password2){
-                const player = new players(req.body);
+                const player = new players(req.body);  
                 player.save()
                  .then(result=>{
                     
