@@ -32,7 +32,7 @@ playerSchema.methods.generateAuthToken = async function(){
 
         const token =  jwt.sign({_id:this._id.toString()}, process.env.SECRET_KEY)//change secret key with min 32 letters
         this.tokens= this.tokens.concat({token:token})
-        this.save();
+        await this.save();
         
         return token;
     }catch(error){

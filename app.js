@@ -85,7 +85,7 @@ app.post('/register',async (req,res)=>{
                  })
                  .catch(err=>{
                     res.redirect('/register');
-                     console.log(err);
+                     console.log("registration error");
                  })
 
 
