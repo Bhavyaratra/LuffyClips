@@ -4,6 +4,7 @@ body {
     padding: 0;
     font-family: 'Raleway', sans-serif;
     color: #F2F2F2;
+
 }
 
 #container-login {
@@ -51,6 +52,7 @@ body {
     width: 240px;
     border-radius: 4px;
     background-color: #373b3d;
+
     padding: 8px 0px;
     margin-top: 15px;
 }
@@ -188,4 +190,10 @@ input[type=submit] {
     border: 0 none;
     cursor: pointer;
     border-radius: 3px;
+
 }
+body{
+    background:#2a2d2e;
+
+  
+  }
