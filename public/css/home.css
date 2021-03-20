@@ -82,7 +82,7 @@ button.main-button:hover {
 
 .welcome-area .header-text {
   position: fixed;
-  top: 1%;
+  top: 25%;
   transform: translateY(-55%);
   text-align: center;
   width: 100%;
