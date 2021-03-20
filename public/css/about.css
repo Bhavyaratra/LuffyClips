@@ -44,11 +44,6 @@ a{
     height: 100%
 }
 
-.image_home{
-    width: 250px;
-    border-radius: 20%;
-}
-
 @media screen and (max-width: 632px) {
     .image_home{
        margin-left: 25%;
