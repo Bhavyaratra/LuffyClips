@@ -6,7 +6,7 @@ ul{
 
 .main_div{
     padding: 5%;
-    margin: 5%;
+    margin: 20%;
 }
 
 /* ---------------------Copied------------------------ */
@@ -81,7 +81,7 @@ button.main-button:hover {
 /* } */
 
 .welcome-area .header-text {
-  position: fixed;
+ 
   top: 25%;
   transform: translateY(-55%);
   text-align: center;
