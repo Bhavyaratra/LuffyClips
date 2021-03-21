@@ -54,10 +54,12 @@ a{
 
   .luff{
     background-color: rgb(19, 17, 17);
+    background-color: rgb(35, 41, 54);
 
     opacity: 70%;
     font-family: "ＭＳ Ｐゴシック";
     text-align: center;
+    border-radius: 20%;
 }
 
   .dev_name{

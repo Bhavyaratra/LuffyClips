@@ -174,3 +174,14 @@ button.main-button:hover {
 }
 
 /* ------------------------------------------ */
+
+
+.welcome-area{
+  margin-top:11%;padding:15%;background-color:rgb(62, 60, 92);border-radius:20%;opacity:60%;height:20px;width:500px;
+}
+@media(max-width:750px){
+  .welcome-area{
+    padding: 2%;;
+    height: 400px;
+  }
+}
