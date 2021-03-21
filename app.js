@@ -143,15 +143,15 @@ app.post("/login", async(req,res) => {
             const isMatch=await bcrypt.compare(password, result.password )
             const token = await result.generateAuthToken();
 
-            //cookies
-            res.cookie("jwt", token,{
-                httpOnly:true
-            });
-
+            
            
             if(isMatch)
             {
-                
+                //cookies
+                res.cookie("jwt", token,{
+                httpOnly:true
+                });
+
                 res.status(201).render('home',{user: true});
             }else{
                 res.send("wrong pswrd")
