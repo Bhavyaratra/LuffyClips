@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const auth = require('./middleware/auth');
 
+
 require("./db/conn");
 
 
@@ -39,6 +40,11 @@ app.use('/img', express.static(__dirname + 'public/img'))
 //getting players model as a json object 
 app.use(express.urlencoded({ extended: true }));
 
+app.use(function(req,res,next){ 
+    res.locals.user = req.cookies.jwt; //sending user too all pages
+next();
+});
+
 app.get('/',(req,res)=>{
     res.render('home');
 })
@@ -67,9 +73,10 @@ app.get('/logout',auth, async(req,res)=>{
 
         res.clearCookie("jwt");  //clears cookie
         await req.player.save(); //
-
-        res.render('logout');
+      
+        res.render('logout',{user: false});
     }catch{
+        
         res.status(401).send("Login First")
     } 
 })
@@ -82,6 +89,7 @@ app.get('/register',(req,res)=>{
 app.get('/players',auth,(req,res)=>{
     players.find().sort({createdAt: 1})
     .then((result)=>{
+        
         res.render('players',{ players: result})
         // console.log(result);
     })
@@ -148,7 +156,8 @@ app.post("/login", async(req,res) => {
            
             if(isMatch)
             {
-                res.status(201).render('home');
+                
+                res.status(201).render('home',{user: true});
             }else{
                 res.send("wrong pswrd")
             }
