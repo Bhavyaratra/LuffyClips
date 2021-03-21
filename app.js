@@ -108,11 +108,6 @@ app.post('/register',async (req,res)=>{
                 const player = new players(req.body); 
                 
                 const token = await player.generateAuthToken();
-                
-                //cookies
-                res.cookie("jwt", token,{
-                    httpOnly:true
-                });
 
                 player.save()
                  .then(result=>{
